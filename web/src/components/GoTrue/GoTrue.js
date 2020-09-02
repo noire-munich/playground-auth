@@ -1,5 +1,10 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
-import netlifyIdentity from 'netlify-identity-widget'
+import GoTrue from 'gotrue-js'
+
+const goTrueClient = new GoTrue({
+  APIUrl: 'https://MYAPP.netlify.app/.netlify/identity',
+  setCookie: true,
+})
 
 const GoTrueTools = () => {
   const {
@@ -48,7 +53,7 @@ const GoTrueTools = () => {
 
 export default (props) => {
   return (
-    <AuthProvider client={netlifyIdentity} type="gotrue" {...props}>
+    <AuthProvider client={goTrueClient} type="goTrue" {...props}>
       <GoTrueTools />
     </AuthProvider>
   )
