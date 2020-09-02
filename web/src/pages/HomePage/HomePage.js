@@ -3,6 +3,7 @@ import Auth0 from 'src/components/Auth0'
 import Netlify from 'src/components/Netlify'
 import MagicLink from 'src/components/MagicLink'
 import Firebase from 'src/components/Firebase'
+import GoTrue from 'src/components/GoTrue/GoTrue'
 
 const HomePage = () => {
   return (
@@ -15,9 +16,10 @@ const HomePage = () => {
       <Auth0>
         <UserTools />
       </Auth0>
-      <Netlify>
+      <GoTrue>
         <UserTools />
-      </Netlify>
+      </GoTrue>
+      <Netlify />
       <MagicLink />
       <Firebase>
         <UserTools />
